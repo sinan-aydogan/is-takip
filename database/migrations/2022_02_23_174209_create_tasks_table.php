@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
+            $table->string('code', 10);
+            $table->foreignId('customer_id')->nullable();
             $table->foreignId('task_id')->nullable();
             $table->foreignId('task_type_id');
             $table->date('planned_date');
