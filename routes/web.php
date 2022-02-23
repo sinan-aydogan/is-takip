@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\TaskController;
+use App\Http\Controllers\TaskTypeController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -33,6 +35,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     /* Resources */
     Route::resources([
-        'customer' => CustomerController::class
+        'customer' => CustomerController::class,
+        'task' => TaskController::class,
+        'task-type' => TaskTypeController::class
     ]);
 });
