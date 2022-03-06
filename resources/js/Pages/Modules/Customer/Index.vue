@@ -1,5 +1,13 @@
 <template>
     <app-layout title="Müşteriler">
+        <template #header>
+            Müşteriler
+        </template>
+
+        <!--Add New Customer-->
+        <template #action-buttons>
+            selam
+        </template>
         <Table :dataSource="customers" :columns="columns" />
     </app-layout>
 </template>
