@@ -4,6 +4,8 @@ import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/inertia-vue3';
 import { InertiaProgress } from '@inertiajs/progress';
 import 'ant-design-vue/dist/antd.css';
+/*FontAwesome*/
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
 
@@ -12,6 +14,7 @@ createInertiaApp({
     resolve: (name) => require(`./Pages/${name}.vue`),
     setup({ el, app, props, plugin }) {
         return createApp({ render: () => h(app, props) })
+            .component('icon', FontAwesomeIcon)
             .use(plugin)
             .mixin({ methods: { route } })
             .mount(el);
