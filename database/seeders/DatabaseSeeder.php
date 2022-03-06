@@ -18,7 +18,8 @@ class DatabaseSeeder extends Seeder
         \App\Models\Customer::factory(50)->create();
 
         $this->call([
-            TaskTypeSeeder::class
+            TaskTypeSeeder::class,
+            UserSeeder::class
         ]);
     }
 }
