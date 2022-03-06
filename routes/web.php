@@ -39,4 +39,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         'task' => TaskController::class,
         'task-type' => TaskTypeController::class
     ]);
+
+    /*Settings*/
+    Route::get('settings', function (){
+        return Inertia::render('Settings/Index');
+    })->name('settings');
 });
